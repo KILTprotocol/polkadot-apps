@@ -20,7 +20,7 @@ import Queue from '@polkadot/react-components/Status/Queue';
 import { BlockAuthors, Events } from '@polkadot/react-query';
 
 import Apps from './Apps';
-export {};
+export { };
 const rootId = 'root';
 const rootElement = document.getElementById(rootId);
 
@@ -28,7 +28,14 @@ const rootElement = document.getElementById(rootId);
 //  - http://localhost:3000/?rpc=wss://substrate-rpc.parity.io/#/explorer
 //  - http://localhost:3000/#/explorer?rpc=wss://substrate-rpc.parity.io
 const urlOptions = queryString.parse(location.href.split('?')[1]);
-const _wsEndpoint = urlOptions.rpc || process.env.WS_URL || settings.apiUrl;
+let tempWsEndpoint: string | string[];
+if (process.env.WS_URL) {
+  const wsURL: string = process.env.WS_URL;
+  tempWsEndpoint = urlOptions.rpc || settings.apiUrl || wsURL;
+} else {
+  tempWsEndpoint = urlOptions.rpc || settings.apiUrl;
+}
+const _wsEndpoint = tempWsEndpoint;
 
 if (Array.isArray(_wsEndpoint)) {
   throw new Error('Invalid WS endpoint specified');
@@ -42,11 +49,14 @@ console.log('WS endpoint=', wsEndpoint);
 
 const types = {
   DelegationNodeId: 'Hash',
+  BlockNumber: 'u64',
+  Index: 'u64',
   PublicSigningKey: 'Hash',
   PublicBoxKey: 'Hash',
   Permissions: 'u32',
   ErrorCode: 'u16'
 };
+
 store.set('types', types);
 
 try {

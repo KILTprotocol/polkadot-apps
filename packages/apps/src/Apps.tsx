@@ -20,19 +20,13 @@ import AccountsOverlay from './overlays/Accounts';
 import { SideBarTransition, SIDEBAR_MENU_THRESHOLD } from './constants';
 import Content from './Content';
 import SideBar from './SideBar';
-import settings from '@polkadot/ui-settings';
+
 interface SidebarState {
   isCollapsed: boolean;
   isMenu: boolean;
   menuOpen: boolean;
   transition: SideBarTransition;
 }
-
-settings.availableNodes.unshift({
-  text: 'KILT Testnet (full-nodes.kilt.io:9944)',
-  value: 'wss://full-nodes.kilt.io:9944/',
-  info: ''
-});
 
 function WarmUp (): React.ReactElement {
   const { api, isApiReady } = useApi();

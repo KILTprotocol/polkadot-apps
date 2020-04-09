@@ -3,7 +3,7 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { I18nProps } from '@polkadot/react-components/types';
-import { Option } from './types';
+import { Option } from '@polkadot/ui-settings/types';
 
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -12,6 +12,12 @@ import uiSettings from '@polkadot/ui-settings';
 
 import translate from './translate';
 import { createOption } from './util';
+
+const kiltOption: Option = {
+  text: 'KILT Testnet (full-nodes.kilt.io:9944)',
+  value: 'wss://full-nodes.kilt.io:9944/',
+  info: 'substrate'
+};
 
 interface Props extends I18nProps {
   className?: string;
@@ -27,8 +33,12 @@ interface State extends StateUrl {
   isCustom: boolean;
 }
 
-const endpointOptions = uiSettings.availableNodes.map((o): Option => createOption(o, ['local']));
-
+function getEndpoints (): Option[] {
+  const tempEndpoints = uiSettings.availableNodes;
+  tempEndpoints.unshift(kiltOption);
+  return tempEndpoints;
+}
+const endpointOptions = getEndpoints().map((o: Option) => createOption(o, ['local']));
 // check the validity of the url
 function isValidUrl (url: string): boolean {
   return (
@@ -51,8 +61,8 @@ function makeUrl (_url: string): StateUrl {
 // validation on-top of the values retrieved
 function getInitialState (): State {
   const url = uiSettings.get().apiUrl;
-  const isCustom = uiSettings.availableNodes.reduce((isCustom: boolean, { value }): boolean => {
-    return isCustom && value !== url;
+  const isCustom = getEndpoints().reduce((isCustom: boolean, { value }): boolean => {
+    return isCustom && value !== url && kiltOption.value !== url;
   }, true);
   const isValid = isValidUrl(url);
 
@@ -70,7 +80,7 @@ function SelectUrl ({ className, onChange, t }: Props): React.ReactElement<Props
       ...makeUrl(
         isCustom
           ? info.url
-          : uiSettings.availableNodes[0].value as string
+          : getEndpoints()[0].value as string
       ),
       isCustom
     });

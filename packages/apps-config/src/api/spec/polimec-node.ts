@@ -10,7 +10,7 @@ export default {
   Address: 'AccountId',
   Index: 'u32',
   LookupSource: 'Address',
-  BlockNumber: 'u32',
+  BlockNumber: 'u64',
   Signature: 'MultiSignature',
   AccountIndex: 'u32',
   Hash: 'H256',
@@ -25,7 +25,22 @@ export default {
   CurrencyIdOf: 'CurrencyId',
 
   ValidatorId: 'AccountId',
-
+  IssuerPoints: 'u32',
+  LeftCouncilReason: {
+    _enum: {
+      SlashedOut: null,
+      VotedOut: null,
+      Voluntarily: null
+    }
+  },
+  SlashReason: {
+    _enum: {
+      Offline: null,
+      FaultyBlock: null,
+      InitProposal: null,
+      MissingVote: null
+    }
+  },
   SessionStatus: {
     _enum: {
       Outdated: null,
@@ -47,7 +62,8 @@ export default {
 
   CouncilMemberApplicant: {
     council_member: 'CouncilMember',
-    total_issuance: 'BalanceOf'
+    total_issuance: 'BalanceOf',
+    closing_at_block: 'BlockNumber'
   },
 
   Ballot: {
@@ -62,5 +78,18 @@ export default {
   },
 
   // required in 2.0.0
-  RefCount: 'u32'
+  RefCount: 'u32',
+
+  StakingLedger2: {
+    stash: 'AccountId',
+    currency_id: 'CurrencyIdOf',
+    total: 'BalanceOf',
+    active: 'BalanceOf',
+    unlocking: 'Vec<UnlockChunk2>'
+  },
+
+  UnlockChunk2: {
+    value: 'BalanceOf',
+    block: 'BlockNumber'
+  }
 };

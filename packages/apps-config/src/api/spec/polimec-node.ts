@@ -50,7 +50,8 @@ export default {
 
   UserVote: {
     amount: 'BalanceOf',
-    approve: 'Option<bool>'
+    approve: 'bool',
+    applicants: 'Vec<AccountId>'
   },
 
   CouncilMember: {
@@ -80,7 +81,7 @@ export default {
   // required in 2.0.0
   RefCount: 'u32',
 
-  StakingLedger2: {
+  StakingLedger: {
     stash: 'AccountId',
     currency_id: 'CurrencyIdOf',
     total: 'BalanceOf',
@@ -88,8 +89,14 @@ export default {
     unlocking: 'Vec<UnlockChunk2>'
   },
 
-  UnlockChunk2: {
+  UnlockChunk: {
     value: 'BalanceOf',
     block: 'BlockNumber'
+  },
+
+  AccountData: {
+    free: 'BalanceOf',
+    reserved: 'BalanceOf',
+    frozen: 'BalanceOf'
   }
 };

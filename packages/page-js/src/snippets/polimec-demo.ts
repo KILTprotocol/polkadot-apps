@@ -8,7 +8,7 @@ import { Snippet } from '@polkadot/app-js/types';
 
 export const polimecDemo: Snippet = {
   value: 'polimecDemo',
-  text: 'Make transfer and listen to events',
+  text: '(Polimec) Make transfer and listen to events',
   label: { color: 'red', children: 'Extrinsics', size: 'tiny' },
   code: `const ALICE = '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY'
   const BOB = '5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty'

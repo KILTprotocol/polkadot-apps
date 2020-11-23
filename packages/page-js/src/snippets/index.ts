@@ -5,6 +5,7 @@ import { Snippet } from './../types';
 
 import { constsStakingParameters } from './consts-examples';
 import { extrinsicMakeTransfer } from './extrinsics-examples';
+import { polimecDemo } from './polimec-demo';
 import { rpcNetworkAuthoring, rpcNewHead, rpcQueryState, rpcSysthemInfo } from './rpc-examples';
 import { storageGetInfo, storageSystemEvents, storageKeys, storageListenToBalanceChange, storageListenToMultipleBalancesChange, storageRetrieveInfoOnQueryKeys } from './storage-examples';
 
@@ -20,7 +21,8 @@ const snippets: Snippet[] = [
   storageRetrieveInfoOnQueryKeys,
   storageKeys,
   constsStakingParameters,
-  extrinsicMakeTransfer
+  extrinsicMakeTransfer,
+  polimecDemo
 ];
 
 export default snippets;

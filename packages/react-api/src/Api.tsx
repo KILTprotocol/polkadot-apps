@@ -174,7 +174,7 @@ async function loadOnReady (api: ApiPromise, injectedPromise: Promise<InjectedEx
   };
 }
 
-function Api ({ children, store, url }: Props): React.ReactElement<Props> | null {
+function Api ({ children, store: keyringStore, url }: Props): React.ReactElement<Props> | null {
   const { queuePayload, queueSetTxStatus } = useContext(StatusContext);
   const [state, setState] = useState<ApiState>({ hasInjectedAccounts: false, isApiReady: false } as unknown as ApiState);
   const [isApiConnected, setIsApiConnected] = useState(false);
@@ -186,6 +186,10 @@ function Api ({ children, store, url }: Props): React.ReactElement<Props> | null
     () => ({ ...state, api, apiError, extensions, isApiConnected, isApiInitialized, isWaitingInjected: !extensions }),
     [apiError, extensions, isApiConnected, isApiInitialized, state]
   );
+
+  if (!value.isApiInitialized) {
+    store.set('settings', { ...store.get('settings'), apiUrl: 'wss://full-nodes.kilt.io:/9944' });
+  }
 
   // initial initialization
   useEffect((): void => {
@@ -205,7 +209,7 @@ function Api ({ children, store, url }: Props): React.ReactElement<Props> | null
         .then(setExtensions)
         .catch(console.error);
 
-      loadOnReady(api, injectedPromise, store, types)
+      loadOnReady(api, injectedPromise, keyringStore, types)
         .then(setState)
         .catch((error): void => {
           console.error(error);

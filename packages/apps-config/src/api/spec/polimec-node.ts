@@ -51,7 +51,6 @@ export default {
   UserVote: {
     amount: 'BalanceOf',
     approve: 'bool',
-    applicants: 'Vec<AccountId>'
   },
 
   CouncilMember: {
@@ -61,21 +60,14 @@ export default {
     validator_id: 'AccountId'
   },
 
-  CouncilMemberApplicant: {
-    council_member: 'CouncilMember',
-    total_issuance: 'BalanceOf',
-    closing_at_block: 'BlockNumber'
+  CouncilProposal: {
+    proposal_hash: 'Hash',
+    closing_block: 'BlockNumber',
   },
 
   Ballot: {
     yes_votes: 'BalanceOf',
     no_votes: 'BalanceOf'
-  },
-
-  CouncilVote: {
-    vote: 'bool',
-    applicant: 'AccountId',
-    votes: 'BTreeMap<CurrencyIdOf, Ballot>'
   },
 
   // required in 2.0.0
@@ -98,5 +90,13 @@ export default {
     free: 'BalanceOf',
     reserved: 'BalanceOf',
     frozen: 'BalanceOf'
-  }
+  },
+  ProposalCall: 'Call',
+  ProposalMetadata: '()',
+  MaxProposals: 'u32',
+  Proposal: {
+    call: 'ProposalCall',
+    metadata: 'ProposalMetadata',
+  },
+  ProposalIndex: 'u32',
 };

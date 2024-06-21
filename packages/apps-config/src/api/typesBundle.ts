@@ -3898,6 +3898,23 @@ export const typesBundle = {
             },
             "version": 1
           }
+        ],
+        "AssetSwap": [
+          {
+            "methods": {
+              "pool_account_id": {
+                "description": "",
+                "params": [
+                  {
+                    "name": "remote_asset_id",
+                    "type": "VersionedAssetId"
+                  }
+                ],
+                "type": "AccountId"
+              }
+            },
+            "version": 1
+          }
         ]
       },
       "types": [
@@ -7527,6 +7544,23 @@ export const typesBundle = {
                   }
                 ],
                 "type": "Result<CompleteMerkleProof, RuntimeApiDipProofError>"
+              }
+            },
+            "version": 1
+          }
+        ],
+        "AssetSwap": [
+          {
+            "methods": {
+              "pool_account_id": {
+                "description": "",
+                "params": [
+                  {
+                    "name": "remote_asset_id",
+                    "type": "VersionedAssetId"
+                  }
+                ],
+                "type": "AccountId"
               }
             },
             "version": 1
@@ -11164,6 +11198,23 @@ export const typesBundle = {
             },
             "version": 1
           }
+        ],
+        "AssetSwap": [
+          {
+            "methods": {
+              "pool_account_id": {
+                "description": "",
+                "params": [
+                  {
+                    "name": "remote_asset_id",
+                    "type": "VersionedAssetId"
+                  }
+                ],
+                "type": "AccountId"
+              }
+            },
+            "version": 1
+          }
         ]
       },
       "types": [
@@ -14797,6 +14848,23 @@ export const typesBundle = {
             },
             "version": 1
           }
+        ],
+        "AssetSwap": [
+          {
+            "methods": {
+              "pool_account_id": {
+                "description": "",
+                "params": [
+                  {
+                    "name": "remote_asset_id",
+                    "type": "VersionedAssetId"
+                  }
+                ],
+                "type": "AccountId"
+              }
+            },
+            "version": 1
+          }
         ]
       },
       "types": [
@@ -18426,6 +18494,23 @@ export const typesBundle = {
                   }
                 ],
                 "type": "Result<CompleteMerkleProof, RuntimeApiDipProofError>"
+              }
+            },
+            "version": 1
+          }
+        ],
+        "AssetSwap": [
+          {
+            "methods": {
+              "pool_account_id": {
+                "description": "",
+                "params": [
+                  {
+                    "name": "remote_asset_id",
+                    "type": "VersionedAssetId"
+                  }
+                ],
+                "type": "AccountId"
               }
             },
             "version": 1

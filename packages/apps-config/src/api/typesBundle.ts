@@ -3907,7 +3907,7 @@ export const typesBundle = {
                 "params": [
                   {
                     "name": "remote_asset_id",
-                    "type": "VersionedAssetId"
+                    "type": "XcmVersionedAssetId"
                   }
                 ],
                 "type": "AccountId"
@@ -7557,7 +7557,7 @@ export const typesBundle = {
                 "params": [
                   {
                     "name": "remote_asset_id",
-                    "type": "VersionedAssetId"
+                    "type": "XcmVersionedAssetId"
                   }
                 ],
                 "type": "AccountId"
@@ -11207,7 +11207,7 @@ export const typesBundle = {
                 "params": [
                   {
                     "name": "remote_asset_id",
-                    "type": "VersionedAssetId"
+                    "type": "XcmVersionedAssetId"
                   }
                 ],
                 "type": "AccountId"
@@ -14857,7 +14857,7 @@ export const typesBundle = {
                 "params": [
                   {
                     "name": "remote_asset_id",
-                    "type": "VersionedAssetId"
+                    "type": "XcmVersionedAssetId"
                   }
                 ],
                 "type": "AccountId"
@@ -18507,7 +18507,7 @@ export const typesBundle = {
                 "params": [
                   {
                     "name": "remote_asset_id",
-                    "type": "VersionedAssetId"
+                    "type": "XcmVersionedAssetId"
                   }
                 ],
                 "type": "AccountId"

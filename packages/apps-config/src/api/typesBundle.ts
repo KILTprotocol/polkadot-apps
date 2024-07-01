@@ -3899,12 +3899,16 @@ export const typesBundle = {
             "version": 1
           }
         ],
-        "AssetSwap": [
+        "AssetSwitch": [
           {
             "methods": {
               "pool_account_id": {
                 "description": "",
                 "params": [
+                  {
+                    "name": "pair_id",
+                    "type": "Text"
+                  },
                   {
                     "name": "remote_asset_id",
                     "type": "StagingXcmVersionedAssetId"
@@ -7549,12 +7553,16 @@ export const typesBundle = {
             "version": 1
           }
         ],
-        "AssetSwap": [
+        "AssetSwitch": [
           {
             "methods": {
               "pool_account_id": {
                 "description": "",
                 "params": [
+                  {
+                    "name": "pair_id",
+                    "type": "Text"
+                  },
                   {
                     "name": "remote_asset_id",
                     "type": "StagingXcmVersionedAssetId"
@@ -11199,12 +11207,16 @@ export const typesBundle = {
             "version": 1
           }
         ],
-        "AssetSwap": [
+        "AssetSwitch": [
           {
             "methods": {
               "pool_account_id": {
                 "description": "",
                 "params": [
+                  {
+                    "name": "pair_id",
+                    "type": "Text"
+                  },
                   {
                     "name": "remote_asset_id",
                     "type": "StagingXcmVersionedAssetId"
@@ -14849,12 +14861,16 @@ export const typesBundle = {
             "version": 1
           }
         ],
-        "AssetSwap": [
+        "AssetSwitch": [
           {
             "methods": {
               "pool_account_id": {
                 "description": "",
                 "params": [
+                  {
+                    "name": "pair_id",
+                    "type": "Text"
+                  },
                   {
                     "name": "remote_asset_id",
                     "type": "StagingXcmVersionedAssetId"
@@ -18499,12 +18515,16 @@ export const typesBundle = {
             "version": 1
           }
         ],
-        "AssetSwap": [
+        "AssetSwitch": [
           {
             "methods": {
               "pool_account_id": {
                 "description": "",
                 "params": [
+                  {
+                    "name": "pair_id",
+                    "type": "Text"
+                  },
                   {
                     "name": "remote_asset_id",
                     "type": "StagingXcmVersionedAssetId"
